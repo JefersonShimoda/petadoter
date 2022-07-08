@@ -51,6 +51,19 @@ class _MainPageState extends State<MainPage> {
               },
               child: const Text('Eventos'),
             ),
+            TextButton(
+              style: TextButton.styleFrom(
+                primary: Colors.white,
+                textStyle: const TextStyle(fontSize: 20),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => logar()),
+                );
+              },
+              child: const Text('Logar'),
+            ),
             IconButton(
               icon: Icon(Icons.chat_bubble_outline_rounded),
               tooltip: 'Chat',
@@ -300,6 +313,96 @@ class cadastroPet extends StatelessWidget {
   }
 }
 
+class logar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+        title: Text("Controle de Acesso"),
+    ),
+    body: Center(
+    child: Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: <Widget>[
+    TextFormField(
+    decoration: const InputDecoration(
+    hintText: 'Login',
+    ),
+    ),
+    TextFormField(
+    decoration: const InputDecoration(
+    hintText: 'Senha',
+    ),
+    ),
+    Padding(
+    padding: const EdgeInsets.symmetric(vertical: 16.0),
+    child: ElevatedButton(
+    onPressed: () {
+
+    },
+    child: const Text('Logar'),
+    ),
+    ),
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 16.0),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => registro()),
+            );
+          },
+          child: const Text('Cadastrar-se'),
+        ),
+      ),
+    ],
+    ),
+    ));
+
+  }
+}
+
+class registro extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Registrar-se!"),
+        ),
+        body: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Email',
+                ),
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Senha',
+                ),
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Repitir senha',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: ElevatedButton(
+                  onPressed: () {
+
+                  },
+                  child: const Text('Concluir'),
+                ),
+              ),
+            ],
+          ),
+        ));
+
+  }
+}
 
 class eventos extends StatelessWidget {
   @override
