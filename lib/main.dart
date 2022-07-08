@@ -375,6 +375,11 @@ class registro extends StatelessWidget {
             children: <Widget>[
               TextFormField(
                 decoration: const InputDecoration(
+                  hintText: 'Nome',
+                ),
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
                   hintText: 'Email',
                 ),
               ),
