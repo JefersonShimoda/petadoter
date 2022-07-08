@@ -79,6 +79,15 @@ class _MainPageState extends State<MainPage> {
             buildImageInteractionPig(),
           ],
         ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => cadastroPet()),
+        );
+      },
+      child: const Icon(Icons.add),
+    ),
       );
 
 
@@ -236,7 +245,61 @@ class _MainPageState extends State<MainPage> {
       ],
     ),
   );
+
 }
+
+class cadastroPet extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+        appBar: AppBar(
+        title: Text("Cadatre seu PET!"),
+    ),
+    body: Center(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'Tipo de PET',
+            ),
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'Nome',
+            ),
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'Raça (se possuir)',
+            ),
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'Porte (Tamanho)',
+            ),
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'Idade',
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: ElevatedButton(
+              onPressed: () {
+
+              },
+              child: const Text('Cadastrar'),
+            ),
+          ),
+        ],
+      ),
+    )
+    );
+  }
+}
+
 
 class eventos extends StatelessWidget {
   @override
